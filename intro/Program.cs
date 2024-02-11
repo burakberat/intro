@@ -34,9 +34,44 @@
 using intro.Business;
 using intro.Entities;
 
-CourseManager courseManager = new();
-Course[] courses = courseManager.GetAll();
-for (int i = 0; i < courses.Length; i++)
+//CourseManager courseManager = new();
+//Course[] courses = courseManager.GetAll();
+//for (int i = 0; i < courses.Length; i++)
+//{
+//    Console.WriteLine(courses[i].Name + " / " + courses[i].Price + " / " + courses[i].Description);
+//}
+
+IndividualCustomer customer1 = new IndividualCustomer();
+customer1.Id = 1;
+customer1.NationalIdentity = "123456789";
+customer1.FirstName = "Burak";
+customer1.LastName = "Orucoglu";
+customer1.CustomerNumber = "1234561";
+
+IndividualCustomer customer2 = new IndividualCustomer();
+customer2.Id = 2;
+customer2.NationalIdentity = "987654321";
+customer2.FirstName = "Serenay";
+customer2.LastName = "Orucoglu";
+customer2.CustomerNumber = "6543211";
+
+CoorporateCustomer customer3 = new CoorporateCustomer();
+customer3.Id = 3;
+customer3.Name = "Kodlama.io";
+customer3.TaxNumber = "1234567890";
+customer3.CustomerNumber = "0123789";
+
+CoorporateCustomer customer4 = new CoorporateCustomer();
+customer4.Id = 3;
+customer4.Name = "BT";
+customer4.TaxNumber = "9876543210";
+customer4.CustomerNumber = "6549870";
+
+BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
+
+//Polymorphism
+foreach (BaseCustomer customer in customers)
 {
-    Console.WriteLine(courses[i].Name + " / " + courses[i].Price);
+    Console.WriteLine(customer.CustomerNumber);
 }
+
