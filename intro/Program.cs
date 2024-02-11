@@ -40,4 +40,3 @@ for (int i = 0; i < courses.Length; i++)
 {
     Console.WriteLine(courses[i].Name + " / " + courses[i].Price);
 }
-//git Changes
