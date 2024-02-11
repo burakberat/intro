@@ -1,23 +1,21 @@
-﻿using intro.Business;
-using intro.DataAccess.Abstracts;
+﻿using intro.DataAccess.Abstracts;
 using intro.Entities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace intro.DataAccess.Concretes
 {
-    public class CourseDal : ICourseDal
+    public class DapperCourseDal : ICourseDal
     {
         List<Course> courses;
-        public CourseDal()
+        public DapperCourseDal()
         {
             Course course1 = new();
             course1.Id = 1;
-            course1.Name = "C# Kursu";
+            course1.Name = "Rust";
             course1.Description = ".Net 8 vs...";
             course1.Price = 0;
 
@@ -34,6 +32,7 @@ namespace intro.DataAccess.Concretes
             course3.Price = 20;
 
             courses = new List<Course> { course1, course2, course3 };
+
         }
         public List<Course> GetAll()
         {

@@ -32,14 +32,17 @@
 //}
 
 using intro.Business;
+using intro.DataAccess.Concretes;
 using intro.Entities;
 
-//CourseManager courseManager = new();
-//Course[] courses = courseManager.GetAll();
-//for (int i = 0; i < courses.Length; i++)
-//{
-//    Console.WriteLine(courses[i].Name + " / " + courses[i].Price + " / " + courses[i].Description);
-//}
+CourseManager courseManager = new(new DapperCourseDal());
+
+
+List<Course> courses = courseManager.GetAll();
+for (int i = 0; i < courses.Count; i++)
+{
+    Console.WriteLine(courses[i].Name + " / " + courses[i].Price + " / " + courses[i].Description);
+}
 
 IndividualCustomer customer1 = new IndividualCustomer();
 customer1.Id = 1;
